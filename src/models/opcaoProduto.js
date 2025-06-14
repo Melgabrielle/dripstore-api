@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 
 const OpcaoProduto = sequelize.define(
-    "Opções do produto",
+    "OpcaoProduto",
     {
         id: {
             type: DataTypes.INTEGER,
@@ -23,7 +23,7 @@ const OpcaoProduto = sequelize.define(
         },
     },
     {
-        tableName: "clientes",
+        tableName: "opcoes_produtos",
         timestamps: true,
         createdAt: "created_at",
         updatedAt: "updated_at",

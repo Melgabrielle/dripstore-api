@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 
 const ProdutoCategoria = sequelize.define(
-    "Produto e categoria",
+    "ProdutoCategoria",
     {
         produto_id: {
             type: DataTypes.INTEGER,
@@ -14,7 +14,7 @@ const ProdutoCategoria = sequelize.define(
         },
     },
     {
-        tableName: "produto e categoria",
+        tableName: "Produto_categorias",
         timestamps: true,
         createdAt: "created_at",
         updatedAt: "updated_at",

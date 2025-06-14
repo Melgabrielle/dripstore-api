@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 
 const ImagemProduto = sequelize.define(
-    "Imagem",
+    "ImagemProduto",
     {
         id: {
             type: DataTypes.INTEGER,
@@ -19,7 +19,7 @@ const ImagemProduto = sequelize.define(
         },
     },
     {
-        tableName: "imagens",
+        tableName: "imagens_produtos",
         timestamps: true,
         createdAt: "created_at",
         updatedAt: "updated_at",
