@@ -8,10 +8,10 @@ import pedidoRoutes from "./pedidoRoutes.js";
 import pagamentoRoutes from "./pagamentoRoutes.js";
 import pedidoItemRoutes from "./pedidoItemRoutes.js";
 import authRoutes from "./authRoutes.js";
-import imagemProduto from "./imagemProdutoRoutes.js";
-import opcaoProduto from "./opcaoProdutoRoutes.js";
-import produtoCategoria from "./produtoCategoriaRoutes.js";
-import Usuario from "./usuarioRoutes.js";
+import imagemProdutoRoutes from "./imagemProdutoRoutes.js";
+//import opcaoProduto from "./opcaoProdutoRoutes.js";
+//import produtoCategoria from "./produtoCategoriaRoutes.js";
+//import Usuario from "./usuarioRoutes.js";
 
 const router = Router();
 
@@ -24,8 +24,8 @@ router.use("/pedidos", pedidoRoutes);
 router.use("/pagamentos", pagamentoRoutes);
 router.use("/pedido-itens", pedidoItemRoutes);
 router.use("/imagem-produtos", imagemProdutoRoutes);
-router.use("/opcao-produtos", opcaoProdutoRoutes);
-router.use("/produto-categoria", produtoCategoriaRoutes);   
-router.use("/usuarios", usuarioRoutes);
+//router.use("/opcao-produtos", opcaoProdutoRoutes);
+//router.use("/produto-categoria", produtoCategoriaRoutes);   
+//router.use("/usuarios", usuarioRoutes);
 
 export default router;
