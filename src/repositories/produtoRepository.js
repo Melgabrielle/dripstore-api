@@ -21,18 +21,18 @@ export async function findProdutoById(id) {
   });
 }
 
-export async function createProduto({ nome, preco, estoque, categoria_id }) {
-  return await Produto.create({ nome, preco, estoque, categoria_id });
+export async function createProduto({ nome, slug, preco, estoque, precoComDesconto, categoria_id }) {
+  return await Produto.create({ nome, slug, preco, estoque, precoComDesconto, categoria_id });
 }
 
 export async function updateProduto(
   id,
-  { nome, preco, estoque, categoria_id }
+  { nome, slug, preco, estoque, precoComDesconto, categoria_id }
 ) {
   const produto = await Produto.findByPk(id);
   if (!produto) return null;
 
-  await produto.update({ nome, preco, estoque, categoria_id });
+  await produto.update({ nome, slug, preco, estoque, precoComDesconto, categoria_id });
   return produto;
 }
 

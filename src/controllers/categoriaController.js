@@ -31,10 +31,10 @@ export async function getCategoriaById(req, res) {
 
 // Criar nova categoria
 export async function createCategoria(req, res) {
-  const { nome } = req.body;
+  const { nome, slug } = req.body;
 
   try {
-    const categoria = await categoriaRepository.createCategoria({ nome });
+    const categoria = await categoriaRepository.createCategoria({ nome, slug });
     return res.status(201).json(categoria);
   } catch (error) {
     console.error("Erro ao criar categoria:", error);

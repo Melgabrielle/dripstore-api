@@ -8,8 +8,9 @@ export async function findCategoriaById(id) {
   return await Categoria.findByPk(id);
 }
 
-export async function createCategoria({ nome }) {
-  return await Categoria.create({ nome });
+// Corrija esta função:
+export async function createCategoria({ nome, slug }) {
+  return await Categoria.create({ nome, slug });
 }
 
 export async function updateCategoria(id, { nome }) {

@@ -31,13 +31,15 @@ export async function getProdutoById(req, res) {
 
 // Criar novo produto
 export async function createProduto(req, res) {
-  const { nome, preco, estoque, categoria_id } = req.body;
+  const { nome, slug, preco, estoque, precoComDesconto, categoria_id } = req.body;
 
   try {
     const produto = await produtoRepository.createProduto({
       nome,
+      slug,
       preco,
       estoque,
+      precoComDesconto,
       categoria_id,
     });
     return res.status(201).json(produto);
@@ -50,13 +52,15 @@ export async function createProduto(req, res) {
 // Atualizar produto
 export async function updateProduto(req, res) {
   const { id } = req.params;
-  const { nome, preco, estoque, categoria_id } = req.body;
+  const { nome, slug, preco, estoque, precoComDesconto, categoria_id } = req.body;
 
   try {
     const produto = await produtoRepository.updateProduto(id, {
       nome,
+      slug,
       preco,
       estoque,
+      precoComDesconto,
       categoria_id,
     });
 
