@@ -8,11 +8,28 @@ export async function findUserById(id) {
   return await Usuario.findByPk(id, { attributes: ["id", "nome", "email"] });
 }
 
-export async function createUser({ primeiroNome, sobrenome, email, senhaHash }) {
+export async function createUser({
+  nome,
+  cpf,
+  email,
+  senhaHash,
+  celular,
+  endereco,
+  bairro,
+  cidade,
+  cep,
+  complemento
+}) {
   return await Usuario.create({
-    primeiroNome,
-    sobrenome,
+    nome,
+    cpf,
     email,
     senha: senhaHash,
+    celular,
+    endereco,
+    bairro,
+    cidade,
+    cep,
+    complemento
   });
 }

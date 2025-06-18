@@ -7,5 +7,6 @@ const router = Router();
 // Rotas protegidas por autenticação
 router.get("/", authMiddleware, imagemProdutoController.getAllImagemProdutos);
 router.get("/:id", authMiddleware, imagemProdutoController.getImagemProdutoById);
+router.post("/", authMiddleware, imagemProdutoController.createImagemProduto);
 
 export default router;

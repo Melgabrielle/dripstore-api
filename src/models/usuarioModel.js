@@ -9,13 +9,14 @@ const Usuario = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    primeiroNome: {
+    nome: {
       type: DataTypes.STRING(100),
       allowNull: false,
     },
-    sobrenome: {
-      type: DataTypes.STRING(100),
+    cpf: {
+      type: DataTypes.STRING(14),
       allowNull: false,
+      unique: true,
     },
     email: {
       type: DataTypes.STRING(100),
@@ -25,6 +26,30 @@ const Usuario = sequelize.define(
     senha: {
       type: DataTypes.STRING(255),
       allowNull: false,
+    },
+    celular: {
+      type: DataTypes.STRING(15),
+      allowNull: false,
+    },
+    endereco: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+    },
+    bairro: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    cidade: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    cep: {
+      type: DataTypes.STRING(9),
+      allowNull: false,
+    },
+    complemento: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
     },
   },
   {

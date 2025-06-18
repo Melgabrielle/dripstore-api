@@ -20,3 +20,7 @@ export async function findImagemProdutoById(id) {
     },
   });
 }
+
+export async function createImagemProduto({ produto_id, path }) {
+  return await ImagemProduto.create({ produto_id, path });
+}

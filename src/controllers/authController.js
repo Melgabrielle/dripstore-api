@@ -10,11 +10,33 @@ const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN;
 
 //registrar novo usuário
 export async function register(req, res) {
-  const { primeiroNome, sobrenome, email, senha } = req.body;
+  const {
+    nome,
+    cpf,
+    email,
+    senha,
+    celular,
+    endereco,
+    bairro,
+    cidade,
+    cep,
+    complemento
+  } = req.body;
 
   try {
     const senhaHash = await bcrypt.hash(senha, 10);
-    await authRepository.createUser({ primeiroNome, sobrenome, email, senhaHash });
+    await authRepository.createUser({
+      nome,
+      cpf,
+      email,
+      senhaHash,
+      celular,
+      endereco,
+      bairro,
+      cidade,
+      cep,
+      complemento
+    });
 
     return res.status(201).json({ message: "Usuário criado com sucesso." });
   } catch (error) {

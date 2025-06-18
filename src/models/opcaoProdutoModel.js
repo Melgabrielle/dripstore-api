@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
+import Produto from "./produtoModel.js";
 
 const OpcaoProduto = sequelize.define(
     "OpcaoProduto",
@@ -12,10 +13,21 @@ const OpcaoProduto = sequelize.define(
         produto_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            references: {
+                model: "produtos",
+                key: "id",
+            },
+            onDelete: "CASCADE",
+            onUpdate: "CASCADE",
         },
         title: {
             type: DataTypes.STRING(100),
             allowNull: false,
+        },
+        type: {
+            type: DataTypes.ENUM("text", "color"),
+            allowNull: true,
+            defaultValue: "text",
         },
         values: {
             type: DataTypes.STRING(100),
@@ -29,5 +41,7 @@ const OpcaoProduto = sequelize.define(
         updatedAt: "updated_at",
     }
 );
+
+OpcaoProduto.belongsTo(Produto, { foreignKey: "produto_id", as: "produto" });
 
 export default OpcaoProduto;

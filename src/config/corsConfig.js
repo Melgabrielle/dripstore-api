@@ -1,4 +1,4 @@
 export default {
-  origin: "*", //Em produção, substitua por ['https://seusite.com']
+  origin: "http://localhost:5173", // Endereço do seu front React
   credentials: true,
 };

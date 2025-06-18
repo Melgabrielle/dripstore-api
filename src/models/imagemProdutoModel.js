@@ -14,7 +14,7 @@ const ImagemProduto = sequelize.define(
             allowNull: false,
         },
         path: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING(255),
             allowNull: false,
         },
     },
